@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="generateQuestion()">
+        <p id="score">Score: 0</p>
+    <p id="question">Please input a number between 1 and 10:</p>
+
+<input id="numb">
+
+<button id="myBtn" type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+    var answer;
+    var score = 0;
+    var input = document.getElementById("numb");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
+function myFunction() {
+  // Get the value of the input field with id="numb"
+  let x = document.getElementById("numb").value;
+    document.getElementById("numb").focus();
+    document.getElementById("numb").select();
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (x==answer) {
+    text = "correct";
+      score+=1;
+      document.getElementById("score").innerHTML = "Score: "+score;
+    generateQuestion();
+  } else {
+      score-=1;
+      document.getElementById("score").innerHTML = "Score: "+score;
+    text = "try again";
+  }
+ document.getElementById("demo").innerHTML = text;
+}
+function generateQuestion(){
+    let q = 9;
+    let p = Math.floor(Math.random() * 10) + 9;
+    document.getElementById("question").innerHTML = p +" - "+q;
+    answer = p-q;
+    
+}
+</script>
+</body>
+</html>
