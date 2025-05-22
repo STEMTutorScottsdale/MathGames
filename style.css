@@ -17,7 +17,7 @@
 
 }
 
-.form-field {
+input {
     display: block;
     width: 100%;
     padding: 8px 16px;
@@ -125,7 +125,7 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-// Center
+
 body {
     min-height: 100vh;
     font-family: 'Mukta Malar', Arial;
@@ -134,7 +134,7 @@ body {
     align-items: center;
     flex-direction: column;
     background: #F5F9FF;  
-    font-size: large;
+    font-size: 50px;
     .form-group {
         max-width: 360px;
         &:not(:last-child) {
